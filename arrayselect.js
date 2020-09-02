@@ -1,7 +1,8 @@
 Array.prototype.select = function (startIdx = 0, endIdx = 0, step = 1) {
   let temp = this;
 
-  if (startIdx !== 0 && endIdx !== 0) temp = temp.slice(startIdx, endIdx);
+  if (startIdx > 0 && endIdx > 0) temp = temp.slice(startIdx, endIdx);
+  else if (startIdx < 0 || endIdx < 0) temp = temp.slice(endIdx, startIdx);
   else if (startIdx !== 0) temp = temp.slice(startIdx);
   else if (endIdx !== 0) temp = temp.slice(0, endIdx);
 
