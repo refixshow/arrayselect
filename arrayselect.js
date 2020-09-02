@@ -1,7 +1,7 @@
 function select(startIdx = 0, endIdx = 0, step = 1) {
   let temp = this;
 
-  if (Math.abs(startIdx) <= Math.abs(endIdx))
+  if (Math.abs(startIdx) < Math.abs(endIdx))
     temp = temp.slice(endIdx, startIdx);
   else if (startIdx !== 0 && endIdx !== 0) temp = temp.slice(startIdx, endIdx);
   else if (startIdx !== 0) temp = temp.slice(startIdx);
