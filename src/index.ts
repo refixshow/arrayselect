@@ -9,8 +9,7 @@ function selected<T>(
 ): Array<T> {
   let temp: Array<T> = this
 
-  if (startIdx < 0 && Math.abs(startIdx) < Math.abs(endIdx))
-    temp = temp.slice(endIdx, startIdx)
+  if (startIdx < 0 && startIdx > endIdx) temp = temp.slice(endIdx, startIdx)
   else if (startIdx !== 0 && endIdx > 0) temp = temp.slice(startIdx, endIdx)
   else if (startIdx !== 0) temp = temp.slice(startIdx)
   else if (endIdx !== 0) temp = temp.slice(0, endIdx)
